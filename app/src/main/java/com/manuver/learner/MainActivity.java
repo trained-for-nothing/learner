@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textView = (TextView)findViewById(R.id.textView);
-        textView.setText(R.string.webContent);
+//        TextView textView = (TextView)findViewById(R.id.textView);
+//        textView.setText(R.string.webContent);
         
     }
 
