@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TextView textView = (TextView)findViewById(R.id.textView);
+        textView.setText(R.string.webContent);
         
     }
 
