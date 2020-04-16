@@ -4,73 +4,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView1"
+    <EditText
+        android:id="@+id/website_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/main_text_margin_top"
-        android:layout_marginBottom="5dp"
-        android:textSize="@dimen/main_text_size"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView1"
-        android:layout_marginTop="@dimen/main_text_margin_top"
-        android:layout_marginBottom="@dimen/main_text_margin_bottom"
-        android:textSize="@dimen/main_text_size"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"/>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView2"
-        android:layout_marginTop="@dimen/main_text_margin_top"
-        android:layout_marginBottom="@dimen/main_text_margin_bottom"
-        android:textSize="@dimen/main_text_size"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"/>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
-        android:layout_marginTop="@dimen/main_text_margin_top"
-        android:layout_marginBottom="@dimen/main_text_margin_bottom"
-        android:textSize="@dimen/main_text_size"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"/>
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView4"
-        android:layout_marginTop="@dimen/main_text_margin_top"
-        android:layout_marginBottom="@dimen/main_text_margin_bottom"
-        android:textSize="@dimen/main_text_size"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:text="@string/edittext_uri" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/open_website_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/main_button_margin_top"
-        android:layout_marginBottom="@dimen/main_button_margin_bottom"
-        android:onClick="launchSecondActivity"
-        android:text="@string/main_button_text"
-        android:textAlignment="center" />
+        android:layout_below="@+id/website_edittext"
+        android:layout_marginBottom="24dp"
+        android:onClick="openWebsite"
+        android:text="@string/button_uri" />
+
+    <EditText
+        android:id="@+id/location_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/open_website_button"
+        android:text="@string/edittext_loc" />
+
+    <Button
+        android:id="@+id/open_location_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_edittext"
+        android:layout_marginBottom="24dp"
+        android:onClick="openLocation"
+        android:text="@string/button_loc" />
+
+    <EditText
+        android:id="@+id/share_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/open_location_button"
+        android:text="@string/edittext_share" />
+
+    <Button
+        android:id="@+id/share_text_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/share_edittext"
+        android:layout_marginBottom="24dp"
+        android:onClick="shareText"
+        android:text="@string/button_share" />
 
 
 </RelativeLayout>

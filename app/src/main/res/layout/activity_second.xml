@@ -3,58 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button1"
-        android:text="@string/fruit_apple"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:onClick="replyMain"
-        />
 
-    <Button
-        android:id="@+id/button2"
-        android:text="@string/fruit_banana"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/button1"
-        android:layout_marginTop="20dp"
-        android:onClick="replyMain"
-        />
-
-    <Button
-        android:id="@+id/button3"
-        android:text="@string/fruit_grapes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/button2"
-        android:layout_marginTop="20dp"
-        android:onClick="replyMain"
-        />
-
-    <Button
-        android:id="@+id/button4"
-        android:text="@string/fruit_Date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/button3"
-        android:layout_marginTop="20dp"
-        android:onClick="replyMain"
-        />
-
-    <Button
-        android:id="@+id/button5"
-        android:text="@string/fruit_Guava"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/button4"
-        android:layout_marginTop="20dp"
-        android:onClick="replyMain"
-        />
 
 </RelativeLayout>
