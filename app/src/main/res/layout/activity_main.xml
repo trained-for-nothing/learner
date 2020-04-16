@@ -1,43 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version='1.0' encoding='utf-8' ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="15dp">
 
-    <TextView
-        android:id="@+id/article_heading"
+    <EditText
+        android:id="@+id/web_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:padding="@dimen/padding_regular"
-        android:text="@string/article_heading"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:text="@string/edittext_uri"
+        />
 
-    <TextView
-        android:id="@+id/article_sub_heading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/article_heading"
-        android:padding="@dimen/padding_regular"
-        android:text="@string/article_subheading"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
-    <ScrollView
+    <Button
+        android:id="@+id/open_web"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/article_sub_heading">
+        android:text="@string/button_uri"
+        android:layout_marginBottom="24dp"
+        android:onClick="openWebsite"/>
 
-        <TextView
-            android:id="@+id/article"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:lineSpacingExtra="5sp"
-            android:padding="@dimen/padding_regular"
-            android:text="@string/article_text" />
-    </ScrollView>
+    <EditText
+        android:id="@+id/loc_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edittext_loc" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/open_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_loc"
+        android:layout_marginBottom="24dp"
+        android:onClick="openLocation"/>
+
+    <EditText
+        android:id="@+id/share_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edittext_share" />
+
+    <Button
+        android:id="@+id/open_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_share"
+        android:layout_marginBottom="24dp"
+        android:onClick="shareText"/>
+
+
+</LinearLayout>
