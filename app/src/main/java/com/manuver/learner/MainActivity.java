@@ -1,71 +1,51 @@
 package com.manuver.learner;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.os.Bundle;
+import android.view.View;
 
-import android.widget.TableLayout;
-import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.LinkedList;
+import java.util.Random;
 
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView mTextView;
+    private RecyclerView mRecyclerView;
+    private WordListAdapter mWordListAdapter;
+    private LinkedList<String> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TabLayout tabLayout = findViewById(R.id.tab_layout_main);
-        tabLayout.addTab(tabLayout.newTab().setText("Welcome"));
-        tabLayout.addTab(tabLayout.newTab().setText("Taylor Swift"));
-        tabLayout.addTab(tabLayout.newTab().setText("Raquel Murillo"));
-        tabLayout.addTab(tabLayout.newTab().setText("Wonder Woman"));
+        list = new LinkedList<String>();
+        FloatingActionButton floatingActionButton = findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(this);
 
-        mTextView = findViewById(R.id.content_main_text);
+        for (int i = 0; i < 10; i++) {
+            list.add("Word " + i);
+        }
 
-        final ViewPager viewPager = findViewById(R.id.view_pager_main);
-        viewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager(), 3) {
+        mRecyclerView = findViewById(R.id.main_recyclerview);
+        mWordListAdapter = new WordListAdapter(getApplicationContext(), list);
 
-            @NonNull
-            @Override
-            public Fragment getItem(int position) {
-                switch (position) {
-                    case 0: return new TabFragment1();
-                    case 1: return new TabFragment2();
-                    case 2: return new TabFragment3();
-                    default: return null;
-                }
-            }
+        mRecyclerView.setAdapter(mWordListAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-            @Override
-            public int getCount() {
-                return 3;
-            }
-        });
+    }
 
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
+    @Override
+    public void onClick(View v) {
+        int size = list.size();
+        list.addLast("Word " + new Random().nextInt());
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+        mRecyclerView.getAdapter().notifyItemInserted(size);
+        mRecyclerView.smoothScrollToPosition(size);
     }
 }
